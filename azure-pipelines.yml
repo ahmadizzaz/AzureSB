@@ -10,6 +10,21 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
+- task: MysqlDeploymentOnMachineGroup@1
+  inputs:
+    TaskNameSelector: 'InlineSqlTask'
+    SqlInline: |
+      CREATE TABLE `gametable` (
+        `id` int NOT NULL,
+        `name` varchar(45) NOT NULL,
+        `platform` varchar(45) NOT NULL,
+        PRIMARY KEY (`id`),
+        UNIQUE KEY `id_UNIQUE` (`id`)
+      )
+    ServerName: 'localhost'
+    DatabaseName: 'gamedb'
+    SqlUsername: 'root'
+    SqlPassword: 'root'
 - task: Maven@3
   inputs:
     mavenPomFile: 'pom.xml'
