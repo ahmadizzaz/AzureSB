@@ -22,7 +22,7 @@ steps:
         PRIMARY KEY (`id`),
         UNIQUE KEY `id_UNIQUE` (`id`)
       )
-    ServerName: 'localhost:3306'
+    ServerName: 'localhost'
     DatabaseName: 'gamedb'
     SqlUsername: 'root'
     SqlPassword: 'root'
