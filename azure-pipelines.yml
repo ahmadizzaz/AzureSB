@@ -15,7 +15,7 @@ steps:
     TaskNameSelector: 'InlineSqlTask'
     SqlInline: |
       CREATE DATABASE IF NOT EXISTS gamedb;
-      use gamedb
+      use gamedb;
       CREATE TABLE `gametable` (
         `id` int NOT NULL,
         `name` varchar(45) NOT NULL,
